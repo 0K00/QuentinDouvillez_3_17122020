@@ -3,12 +3,18 @@ body, html {
     font-family: 'Roboto', sans-serif;
 }
 
+
 .container {
 
 }
 
 header {
-
+    height: 165px;
+   .header--logo {
+       background-image: url("img/logo.svg");
+       height: 40px;
+       width: 165px;
+   } 
 }
 
 footer {
