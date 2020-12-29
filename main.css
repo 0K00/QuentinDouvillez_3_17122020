@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 body, html, * {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -22,13 +23,8 @@ body, html, * {
 .header--logo {
   width: 160px;
   margin: 0 auto;
-  background-color: #000;
-  -webkit-mask: url("img/logo.svg") no-repeat left;
-  -webkit-mask-size: contain;
-  mask: url("img/logo.svg") no-repeat left;
-  mask-size: contain;
-  text-indent: 100%;
-  overflow: hidden;
+  color: #000;
+  font-family: "Shrikhand", cursive;
 }
 
 .footer {
@@ -42,14 +38,9 @@ body, html, * {
   padding: 1rem;
 }
 .footer--logo {
-  background-color: #FFF;
-  -webkit-mask: url("img/logo.svg") no-repeat left;
-  -webkit-mask-size: contain;
-  mask: url("img/logo.svg") no-repeat left;
-  mask-size: contain;
-  margin: 0 0 1rem;
-  text-indent: 100%;
-  overflow: hidden;
+  color: #FFF;
+  font-family: "Shrikhand", cursive;
+  margin-bottom: 1rem;
 }
 .footer--list {
   padding: 0;
@@ -87,6 +78,95 @@ body, html, * {
 }
 .cta:active {
   filter: brightness(95%);
+}
+
+.main--btn {
+  height: 2rem;
+  margin-right: 0.5rem;
+  background-color: transparent;
+  border: 0 solid transparent;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  font-size: 25px;
+  outline: 0;
+}
+.main--btn:hover .btn--icon:first-child {
+  transition-duration: 0.25s;
+  opacity: 0;
+}
+.main--btn:hover .btn--icon:nth-child(2) {
+  opacity: 100%;
+}
+.main--btn .btn--icon:nth-child(2) {
+  transition-duration: 0.25s;
+  background: linear-gradient(180deg, #9b44d9 -10%, #e44fd7 110%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  opacity: 0;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(0.5rem);
+  }
+  75% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes loader {
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+.loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  animation: loader 0.01s;
+  animation-delay: 1.75s;
+  animation-fill-mode: both;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader--item {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 1rem;
+  animation: jump 1s;
+  animation-iteration-count: 1;
+}
+.loader--item--container {
+  display: flex;
+  width: 5rem;
+  justify-content: space-between;
+}
+.loader--item--1 {
+  background-color: #9356dc;
+}
+.loader--item--2 {
+  background-color: #ff79da;
+  animation-delay: 0.25s;
+}
+.loader--item--3 {
+  background-color: #99e2d0;
+  animation-delay: 0.5s;
 }
 
 .local {
@@ -230,33 +310,184 @@ body, html, * {
 .rest--box .card--footer .card--content .card--title {
   margin: 0 0 0.25rem;
 }
-.rest--box .card--footer .card--btn {
-  height: 2rem;
-  margin-right: 0.5rem;
-  background-color: transparent;
-  border: 0 solid transparent;
-  padding: 0;
+
+.header--return {
+  position: absolute;
+  left: 2rem;
+  top: 40%;
+  font-size: 1.2rem;
+}
+.header--link {
+  text-decoration: none;
+  color: #000;
+}
+
+.main--hero img {
+  max-width: 100%;
+  max-height: 32rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.menu {
+  margin-top: -4rem;
+  border-radius: 2rem 2rem 0 0;
+  background-color: #f6f6f6;
+  z-index: 1;
+  position: relative;
+  padding: 0 1rem;
+}
+.menu--title {
+  padding: 2rem 1rem 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu--title--text {
+  font-family: "Shrikhand", cursive;
+  font-size: 30px;
+}
+.menu--box {
+  display: grid;
+  margin-left: -40px;
+}
+.menu--box .box--card .box--subtitle {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.menu--box .box--card .box--title h3 {
+  margin-bottom: 1.3rem;
+}
+.menu--box .box--card .box--title h3:after {
+  content: "";
+  width: 3rem;
+  height: 0.2rem;
+  background-color: #99e2d0;
+  position: absolute;
+  left: 17px;
+  margin-top: 25px;
+}
+.menu--box .box--cta {
+  outline: 0;
+  font-size: 1.1rem;
+  background-color: #fff;
+  padding: 1rem;
+  display: flex;
+  border: 0;
+  border-radius: 0.75rem;
+  margin: 1rem 0;
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation-fill-mode: both;
+  transform: scale(0);
+  cursor: pointer;
+  width: 100%;
+}
+.menu--box .box--cta .box--section {
+  display: flex;
+  flex-direction: column;
+}
+.menu--box .box--cta .box--section .box--subtitle {
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  margin-left: -72px;
+  margin-top: 0.3rem;
+}
+.menu--box .box--cta .box--aside {
+  font-size: 14px;
+  font-weight: 500;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
+.box {
+  margin-top: 2rem;
+}
+
+.menu--btn {
   display: flex;
   justify-content: center;
-  cursor: pointer;
+  padding: 2rem 0 4rem 0;
+}
+.menu--btn .menu--cta {
+  padding: 15px 50px;
+}
+
+.box--conf {
+  margin-right: -64px;
+  margin-left: 15px;
   position: relative;
-  font-size: 25px;
-  outline: 0;
+  transition-duration: 0.5s;
 }
-.rest--box .card--footer .card--btn:hover .card--btn--icon:first-child {
-  transition-duration: 0.25s;
-  opacity: 0;
+.box--conf .conf--icon {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  margin-bottom: -40px;
+  margin-top: -16px;
+  margin-right: -16px;
+  background-color: #99e2d0;
+  width: 4rem;
+  transition-duration: 0.5s;
 }
-.rest--box .card--footer .card--btn:hover .card--btn--icon:nth-child(2) {
-  opacity: 100%;
+.box--conf .conf--icon span {
+  color: #fff;
+  margin-top: 7px;
+  font-size: 23px;
+  transform: rotate(180deg);
+  transition-duration: 0.5s;
 }
-.rest--box .card--footer .card--btn--icon:nth-child(2) {
-  transition-duration: 0.25s;
-  background: linear-gradient(180deg, #9b44d9 -10%, #e44fd7 110%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: absolute;
-  opacity: 0;
+
+.box--cta:hover .box--conf {
+  margin-right: 0px;
+}
+.box--cta:hover .box--conf .conf--icon span {
+  transform: rotate(0deg);
+}
+
+@keyframes itemAppear {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.delay-0 {
+  animation: itemAppear 0.6s;
+}
+
+.delay-1 {
+  animation: itemAppear 0.8s;
+}
+
+.delay-2 {
+  animation: itemAppear 1s;
+}
+
+.delay-3 {
+  animation: itemAppear 1.2s;
+}
+
+.delay-4 {
+  animation: itemAppear 1.4s;
+}
+
+.delay-5 {
+  animation: itemAppear 1.6s;
+}
+
+.delay-6 {
+  animation: itemAppear 1.8s;
+}
+
+.delay-7 {
+  animation: itemAppear 2s;
+}
+
+.delay-8 {
+  animation: itemAppear 2.2s;
 }
 
 /*# sourceMappingURL=main.css.map */

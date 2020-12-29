@@ -1,0 +1,151 @@
+.header {
+    &--return {
+        position: absolute;
+        left: 2rem;
+        top: 40%;
+        font-size: 1.2rem;
+    }
+   &--link {
+       text-decoration: none;
+       color: #000;
+   } 
+}
+
+.main--hero {
+    img {
+        max-width: 100%;
+        max-height: 32rem;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.menu {
+    margin-top: -4rem;
+    border-radius: 2rem 2rem 0 0;
+    background-color: #f6f6f6;
+    z-index: 1;
+    position: relative;
+    padding: 0 1rem;
+    &--title {
+        padding: 2rem 1rem 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &--text {
+            font-family: 'Shrikhand', cursive;
+            font-size: 30px;
+        }
+    }
+    &--box {
+        display: grid;
+        margin-left: -40px;
+        .box--card {
+            .box--subtitle {
+                text-transform: uppercase;
+                font-weight: 300;
+            }
+            .box--title h3 {
+                margin-bottom: 1.3rem;
+            }
+            .box--title h3:after {
+                content: ""; 
+                width: 3rem; 
+                height: .2rem; 
+                background-color: #99e2d0; 
+                position: absolute; 
+                left: 17px;
+                margin-top: 25px;
+            }
+        }
+        .box--cta {
+            outline: 0;
+            font-size: 1.1rem;
+            background-color: #fff;
+            padding: 1rem;
+            display: flex;
+            border: 0;
+            border-radius: .75rem;
+            margin: 1rem 0;
+            box-shadow: 0.25rem 0.25rem 1rem rgba(0,0,0,.1);
+            overflow: hidden;
+            animation-fill-mode: both;
+            transform: scale(0);
+            cursor: pointer;
+            width: 100%;
+            .box--section {
+                display: flex;
+                flex-direction: column;
+                .box--subtitle {
+                    text-transform: capitalize;
+                    font-size: .9rem;
+                    margin-left: -72px;
+                    margin-top: .3rem;
+                }
+            }
+            .box--aside {
+                font-size: 14px;
+                font-weight: 500;
+                flex: 1;
+                display: flex;
+                justify-content: flex-end;
+                margin-top: 25px;
+            }
+        }
+    }
+}
+.box {
+    margin-top: 2rem;
+}
+.menu--btn {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0 4rem 0;
+    .menu--cta {
+        padding: 15px 50px;
+    }
+}
+.box--conf {
+    margin-right: -64px;
+    margin-left: 15px;
+    position: relative;
+    transition-duration: .5s;
+    .conf--icon {
+        padding-top: 20px;
+        padding-bottom: 40px;
+        margin-bottom: -40px;
+        margin-top: -16px;
+        margin-right: -16px;
+        background-color: #99e2d0; 
+        width: 4rem;
+        transition-duration: .5s;
+    }
+    .conf--icon span {
+        color: #fff;
+        margin-top: 7px;
+        font-size: 23px;
+        transform: rotate(180deg);
+        transition-duration: .5s;
+    }
+}
+.box--cta:hover .box--conf {
+    margin-right: 0px;
+    .conf--icon span {
+        transform: rotate(0deg); 
+    }
+}
+
+@keyframes itemAppear {
+    0% {
+      transform: scale(0)
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+@for $i from 0 to 9 {
+    .delay-#{$i} {
+      animation: itemAppear #{$i/5+0.6}s;
+    }
+  }

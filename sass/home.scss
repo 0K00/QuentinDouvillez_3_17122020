@@ -8,7 +8,6 @@ $color-icon-list: #707070;
 $color-icon-list-hover: #9356dc;
 $color-bg-list-hover: #f4ecfe;
 $color-bg-rest: #F6F6F6;
-$color-gradient-like: linear-gradient(180deg, rgba(155,68,217,1) -10%, rgba(228,79,215,1) 110%);
 
 .local {
     background-color: $color-bg-local;
@@ -151,37 +150,6 @@ $color-gradient-like: linear-gradient(180deg, rgba(155,68,217,1) -10%, rgba(228,
                         margin: 0 0 .25rem;
                     }
                 }
-                .card--btn {
-                    height: 2rem;
-                    margin-right: .5rem;
-                    background-color: transparent;
-                    border: 0 solid transparent;
-                    padding: 0;
-                    display: flex;
-                    justify-content: center;
-                    cursor: pointer;
-                    position: relative;
-                    font-size: 25px;
-                    outline: 0;
-                    &:hover {
-                        .card--btn--icon:first-child {
-                            transition-duration: .25s;
-                            opacity: 0;
-                        }
-                        .card--btn--icon:nth-child(2) {
-                            opacity: 100%;
-                        }
-                    }
-                    &--icon:nth-child(2) {
-                        transition-duration: .25s;
-                        background: $color-gradient-like;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                        position: absolute;
-                        opacity: 0;
-                    }
-                }
-
             }
         }
     }
