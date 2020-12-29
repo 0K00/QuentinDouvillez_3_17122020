@@ -80,6 +80,13 @@ body, html, * {
   cursor: pointer;
   transition-duration: 0.25s;
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+  outline: 0;
+}
+.cta:hover {
+  filter: brightness(115%);
+}
+.cta:active {
+  filter: brightness(95%);
 }
 
 .local {
@@ -123,6 +130,13 @@ body, html, * {
   display: flex;
   position: relative;
   align-items: center;
+  transition-duration: 0.25s;
+}
+.fonct .f-l--block:hover {
+  background-color: #f4ecfe;
+}
+.fonct .f-l--block:hover span:first-child {
+  color: #9356dc;
 }
 .fonct .f-l--block:before {
   counter-increment: compteListe 1;
@@ -149,9 +163,10 @@ body, html, * {
 
 .rest {
   background-color: #F6F6F6;
-  padding: 2rem 1rem;
+  padding: 4rem 1rem;
 }
 .rest--box {
+  margin-top: 1.5rem;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   column-gap: 2rem;
@@ -160,28 +175,37 @@ body, html, * {
 .rest--box .card {
   background-color: #fff;
   border-radius: 1rem;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   position: relative;
   text-decoration: none;
   color: inherit;
   display: block;
+  overflow: hidden;
+  transition-duration: 0.25s;
+}
+.rest--box .card:hover img {
+  transform: scale(1.03);
+}
+.rest--box .card:active img {
+  transform: scale(1);
 }
 .rest--box .card--img {
   height: 12rem;
   width: 100%;
   border-radius: 1rem 1rem 0 0;
   object-fit: cover;
+  transition-duration: 0.25s;
 }
 .rest--box .card--badge {
   background-color: #99e2d0;
   color: #1E9A7B;
   font-size: 15px;
   font-weight: 500;
-  box-shadow: 0px 0px 10px 0px black;
-  -webkit-box-shadow: 0px 0px 10px 0px black;
-  -moz-box-shadow: 0px 0px 10px 0px black;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
   padding: 0.5rem 1rem;
   border-radius: 0.125rem;
   position: absolute;
@@ -208,7 +232,7 @@ body, html, * {
 }
 .rest--box .card--footer .card--btn {
   height: 2rem;
-  width: 2rem;
+  margin-right: 0.5rem;
   background-color: transparent;
   border: 0 solid transparent;
   padding: 0;
@@ -217,6 +241,22 @@ body, html, * {
   cursor: pointer;
   position: relative;
   font-size: 25px;
+  outline: 0;
+}
+.rest--box .card--footer .card--btn:hover .card--btn--icon:first-child {
+  transition-duration: 0.25s;
+  opacity: 0;
+}
+.rest--box .card--footer .card--btn:hover .card--btn--icon:nth-child(2) {
+  opacity: 100%;
+}
+.rest--box .card--footer .card--btn--icon:nth-child(2) {
+  transition-duration: 0.25s;
+  background: linear-gradient(180deg, #9b44d9 -10%, #e44fd7 110%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  opacity: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
