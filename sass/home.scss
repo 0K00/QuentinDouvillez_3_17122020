@@ -1,0 +1,145 @@
+$color-bg-local: #e6e6e6;
+$color-bg-hero: #F6F6F6;
+$color-text-hero: #707070;
+$color-bg-list: #F6F6F6;
+$color-num-list: #FFF;
+$color-bg-num: #9356dc;
+$color-icon-list: #707070;
+$color-bg-rest: #F6F6F6;
+
+.local {
+    background-color: $color-bg-local;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 500; 
+    span {
+        margin-right: 1rem;
+    }
+}
+
+.hero {
+    background-color: $color-bg-hero;
+    padding: 2rem 2rem 3.5rem 2rem;
+    text-align: center;
+    &--text {
+        font-weight: 300;
+        margin: 1rem 0 2rem 0;
+        color: $color-text-hero;
+    }
+}
+
+.fonct {
+    padding: 3rem 1rem 2.5rem 1rem;
+    &--list {
+        margin-top: 2rem;
+        padding: 0;
+        counter-reset: compteListe;
+    }
+    .f-l--block{
+        cursor: pointer;
+        padding: 1.8rem;
+        margin: 0 .3rem 1.5rem .75rem;
+        box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,.125);
+        border-radius: 1.25rem;
+        background-color: $color-bg-list;
+        display: flex;
+        position: relative;
+        align-items: center;
+        &:before {
+            counter-increment: compteListe 1;
+            content: counter(compteListe) " ";
+            background: $color-bg-num;
+            height: 1.5rem;
+            width: 1.5rem;
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $color-num-list;
+            position: absolute;
+            left: -.75rem;
+        }
+        span {
+            font-weight: 500;
+            &:first-child {
+                margin:0 1.5rem 0 1rem;
+                color: $color-icon-list;
+                font-weight: 900;
+            }
+        }
+    }
+}
+
+.rest {
+    background-color: $color-bg-rest;
+    padding: 2rem 1rem;
+    &--box {
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        column-gap: 2rem;
+        row-gap: 2rem;
+        .card {
+            background-color: #fff;
+            border-radius: 1rem;
+            box-shadow: 0px 0px 5px 0px rgba(0,0,0,.25);
+            -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,.25);
+            -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,.25);
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            &--img {
+                height: 12rem;
+                width: 100%;
+                border-radius: 1rem 1rem 0 0;
+                object-fit: cover;
+            }
+            &--badge {
+                background-color: #99e2d0;
+                color: #1E9A7B;
+                font-size: 15px;
+                font-weight: 500;
+                box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
+                -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
+                -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,1);
+                padding: .5rem 1rem;
+                border-radius: .125rem;
+                position: absolute;
+                top: 1rem;
+                right: .75rem;
+            }
+            &--badge[data-active=true] {
+                opacity: 100%;
+            }
+            &--badge[data-active=false] {
+                opacity: 0;
+            }
+            &--footer {
+                padding: 1rem;
+                position: relative;
+                display: flex;
+                align-items: center;
+                .card--content {
+                    flex: 1;
+                    .card--title {
+                        margin: 0 0 .25rem;
+                    }
+                }
+                .card--btn {
+                    height: 2rem;
+                    width: 2rem;
+                    background-color: transparent;
+                    border: 0 solid transparent;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    cursor: pointer;
+                    position: relative;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
