@@ -1,3 +1,9 @@
+$color-bg-menu: #f6f6f6;
+$color-bg-underline: #99e2d0;
+$color-bg-menu-cta: #FFF;
+$color-bg-conf: #99e2d0;
+$color-conf: #FFF;
+
 .header {
     &--return {
         position: absolute;
@@ -23,12 +29,12 @@
 .menu {
     margin-top: -4rem;
     border-radius: 2rem 2rem 0 0;
-    background-color: #f6f6f6;
+    background-color: $color-bg-menu;
     z-index: 1;
     position: relative;
     padding: 0 1rem;
     &--title {
-        padding: 2rem 1rem 0 0;
+        padding: 2rem 0 0 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -52,7 +58,7 @@
                 content: ""; 
                 width: 3rem; 
                 height: .2rem; 
-                background-color: #99e2d0; 
+                background-color: $color-bg-underline; 
                 position: absolute; 
                 left: 17px;
                 margin-top: 25px;
@@ -61,7 +67,7 @@
         .box--cta {
             outline: 0;
             font-size: 1.1rem;
-            background-color: #fff;
+            background-color: $color-bg-menu-cta;
             padding: 1rem;
             display: flex;
             border: 0;
@@ -73,13 +79,17 @@
             transform: scale(0);
             cursor: pointer;
             width: 100%;
+            text-align: inherit;
             .box--section {
+                text-overflow: ellipsis; 
+                display: block; 
+                overflow: hidden; 
+                height: 40px;
                 display: flex;
                 flex-direction: column;
                 .box--subtitle {
                     text-transform: capitalize;
                     font-size: .9rem;
-                    margin-left: -72px;
                     margin-top: .3rem;
                 }
             }
@@ -116,12 +126,13 @@
         margin-bottom: -40px;
         margin-top: -16px;
         margin-right: -16px;
-        background-color: #99e2d0; 
+        background-color: $color-bg-conf; 
         width: 4rem;
         transition-duration: .5s;
+        text-align: center;
     }
     .conf--icon span {
-        color: #fff;
+        color: $color-conf;
         margin-top: 7px;
         font-size: 23px;
         transform: rotate(180deg);
@@ -144,7 +155,7 @@
     }
   }
 
-@for $i from 0 to 9 {
+@for $i from 0 to 10 {
     .delay-#{$i} {
       animation: itemAppear #{$i/5+0.6}s;
     }
