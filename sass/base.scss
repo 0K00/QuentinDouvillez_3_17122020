@@ -188,3 +188,25 @@ $color-gradient-like: linear-gradient(180deg, rgba(155,68,217,1) -10%, rgba(228,
       }
     }
 }
+
+
+/* @function set-color($color) { 
+    @if (lightness($color) > 40) { 
+     @return #000; 
+    } 
+    @else { 
+     @return #FFF; 
+    } 
+} 
+
+div { background-color: black; } 
+div p { color: set-color(black); } 
+
+text-overflow
+animation items
+responsive
+restructuré repertoire et fichier
+loader opaciity 1
+
+*/
+

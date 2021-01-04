@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 body, html, * {
@@ -169,6 +170,25 @@ body, html, * {
   animation-delay: 0.5s;
 }
 
+/* @function set-color($color) { 
+    @if (lightness($color) > 40) { 
+     @return #000; 
+    } 
+    @else { 
+     @return #FFF; 
+    } 
+} 
+
+div { background-color: black; } 
+div p { color: set-color(black); } 
+
+text-overflow
+animation items
+responsive
+restructuré repertoire et fichier
+loader opaciity 1
+
+*/
 .local {
   background-color: #e6e6e6;
   display: flex;
