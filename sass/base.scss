@@ -25,9 +25,9 @@ $color-gradient-like: linear-gradient(180deg, rgba(155,68,217,1) -10%, rgba(228,
 .header {
     background-color: $color-bg-header;
     padding: 20px 0 10px 0;
-    box-shadow: 0 0 0.5rem rgba(0,0,0,.25);
-    -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,.25);
-    -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,.25);
+    box-shadow: 0 0 0.5rem rgba(0,0,0,.1);
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(0,0,0,.1);
+    -moz-box-shadow: 0px 2px 2px 0px rgba(0,0,0,.1);
     position: relative;
    &--logo {
     width: 160px;
@@ -151,7 +151,7 @@ $color-gradient-like: linear-gradient(180deg, rgba(155,68,217,1) -10%, rgba(228,
     width: 100%;
     left: 0;
     top: 0;
-    background-color: rgba(255, 255, 255, 0.90);
+    background-color: rgba(255, 255, 255, 1);
     animation: loader 0.01s;
     animation-delay: 1.75s;
     animation-fill-mode: both;
@@ -190,23 +190,9 @@ $color-gradient-like: linear-gradient(180deg, rgba(155,68,217,1) -10%, rgba(228,
 }
 
 
-/* @function set-color($color) { 
-    @if (lightness($color) > 40) { 
-     @return #000; 
-    } 
-    @else { 
-     @return #FFF; 
-    } 
-} 
+/* 
 
-div { background-color: black; } 
-div p { color: set-color(black); } 
-
-text-overflow
-animation items
-responsive
 restructuré repertoire et fichier
-loader opaciity 1
 
 */
 

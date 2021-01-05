@@ -16,9 +16,9 @@ body, html, * {
 .header {
   background-color: #FFF;
   padding: 20px 0 10px 0;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
-  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
   position: relative;
 }
 .header--logo {
@@ -137,7 +137,7 @@ body, html, * {
   width: 100%;
   left: 0;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: white;
   animation: loader 0.01s;
   animation-delay: 1.75s;
   animation-fill-mode: both;
@@ -170,23 +170,9 @@ body, html, * {
   animation-delay: 0.5s;
 }
 
-/* @function set-color($color) { 
-    @if (lightness($color) > 40) { 
-     @return #000; 
-    } 
-    @else { 
-     @return #FFF; 
-    } 
-} 
+/* 
 
-div { background-color: black; } 
-div p { color: set-color(black); } 
-
-text-overflow
-animation items
-responsive
 restructuré repertoire et fichier
-loader opaciity 1
 
 */
 .local {
@@ -271,6 +257,12 @@ loader opaciity 1
   grid-template-columns: repeat(1, 1fr);
   column-gap: 2rem;
   row-gap: 2rem;
+}
+@media (min-width: 64rem) {
+  .rest--box {
+    grid-template-columns: repeat(2, 2fr);
+    column-gap: 1rem;
+  }
 }
 .rest--box .card {
   background-color: #fff;
@@ -357,6 +349,15 @@ loader opaciity 1
   position: relative;
   padding: 0 1rem;
 }
+.menu--box {
+  display: grid;
+}
+@media (min-width: 64rem) {
+  .menu--box {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+  }
+}
 .menu--title {
   padding: 2rem 0 0 0;
   display: flex;
@@ -367,67 +368,89 @@ loader opaciity 1
   font-family: "Shrikhand", cursive;
   font-size: 30px;
 }
-.menu--box {
-  display: grid;
+.menu .box {
   margin-left: -40px;
 }
-.menu--box .box--card .box--subtitle {
-  text-transform: uppercase;
-  font-weight: 300;
-}
-.menu--box .box--card .box--title h3 {
+.menu .box--subtitle {
   margin-bottom: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 400;
 }
-.menu--box .box--card .box--title h3:after {
+.menu .box--subtitle:before {
   content: "";
   width: 3rem;
   height: 0.2rem;
   background-color: #99e2d0;
   position: absolute;
-  left: 17px;
-  margin-top: 25px;
+  margin-top: 28px;
 }
-.menu--box .box--cta {
-  outline: 0;
+.menu .box--cta {
   font-size: 1.1rem;
   background-color: #FFF;
   padding: 1rem;
   display: flex;
-  border: 0;
   border-radius: 0.75rem;
   margin: 1rem 0;
   box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  animation-fill-mode: both;
-  transform: scale(0);
   cursor: pointer;
-  width: 100%;
-  text-align: inherit;
+  opacity: 1;
+  transform: translateY(-50px);
+  animation-fill-mode: both;
+  max-width: 100%;
 }
-.menu--box .box--cta .box--section {
+.menu .box--cta .box--section {
+  white-space: nowrap;
   text-overflow: ellipsis;
-  display: block;
   overflow: hidden;
-  height: 40px;
-  display: flex;
-  flex-direction: column;
+  flex: 1;
 }
-.menu--box .box--cta .box--section .box--subtitle {
-  text-transform: capitalize;
+.menu .box--cta .box--title {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 1rem;
+}
+.menu .box--cta .box--text {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
   font-size: 0.9rem;
   margin-top: 0.3rem;
 }
-.menu--box .box--cta .box--aside {
-  font-size: 14px;
-  font-weight: 500;
-  flex: 1;
+.menu .box--cta .box--price {
   display: flex;
   justify-content: flex-end;
+  align-items: flex-end;
+  padding-left: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   margin-top: 25px;
 }
-
-.box {
-  margin-top: 2rem;
+.menu .box--cta .box--conf {
+  background-color: #99e2d0;
+  margin: -1rem -5rem -1rem 1rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.5s;
+}
+.menu .box--cta:hover .box--conf {
+  margin-right: -1rem;
+}
+.menu .box--cta .conf--icon {
+  font-size: 1.4rem;
+  color: #FFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.5s;
+}
+.menu .box--cta:hover .conf--icon {
+  animation: spin 0.5s;
 }
 
 .menu--btn {
@@ -439,84 +462,62 @@ loader opaciity 1
   padding: 15px 50px;
 }
 
-.box--conf {
-  margin-right: -64px;
-  margin-left: 15px;
-  position: relative;
-  transition-duration: 0.5s;
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
 }
-.box--conf .conf--icon {
-  padding-top: 20px;
-  padding-bottom: 40px;
-  margin-bottom: -40px;
-  margin-top: -16px;
-  margin-right: -16px;
-  background-color: #99e2d0;
-  width: 4rem;
-  transition-duration: 0.5s;
-  text-align: center;
-}
-.box--conf .conf--icon span {
-  color: #FFF;
-  margin-top: 7px;
-  font-size: 23px;
-  transform: rotate(180deg);
-  transition-duration: 0.5s;
-}
-
-.box--cta:hover .box--conf {
-  margin-right: 0px;
-}
-.box--cta:hover .box--conf .conf--icon span {
-  transform: rotate(0deg);
-}
-
-@keyframes itemAppear {
+@keyframes itemdown {
   0% {
-    transform: scale(0);
+    transform: translateY(-50px);
+    opacity: 0;
   }
   100% {
-    transform: scale(1);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 .delay-0 {
-  animation: itemAppear 0.6s;
+  animation: itemdown 0.5s ease-in-out 0s;
 }
 
 .delay-1 {
-  animation: itemAppear 0.8s;
+  animation: itemdown 0.5s ease-in-out 0.05s;
 }
 
 .delay-2 {
-  animation: itemAppear 1s;
+  animation: itemdown 0.5s ease-in-out 0.1s;
 }
 
 .delay-3 {
-  animation: itemAppear 1.2s;
+  animation: itemdown 0.5s ease-in-out 0.15s;
 }
 
 .delay-4 {
-  animation: itemAppear 1.4s;
+  animation: itemdown 0.5s ease-in-out 0.2s;
 }
 
 .delay-5 {
-  animation: itemAppear 1.6s;
+  animation: itemdown 0.5s ease-in-out 0.25s;
 }
 
 .delay-6 {
-  animation: itemAppear 1.8s;
+  animation: itemdown 0.5s ease-in-out 0.3s;
 }
 
 .delay-7 {
-  animation: itemAppear 2s;
+  animation: itemdown 0.5s ease-in-out 0.35s;
 }
 
 .delay-8 {
-  animation: itemAppear 2.2s;
+  animation: itemdown 0.5s ease-in-out 0.4s;
 }
 
 .delay-9 {
-  animation: itemAppear 2.4s;
+  animation: itemdown 0.5s ease-in-out 0.45s;
 }
 
 /*# sourceMappingURL=main.css.map */
