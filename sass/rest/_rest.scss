@@ -1,85 +1,7 @@
-$color-bg-local: #e6e6e6;
-$color-bg-hero: #F6F6F6;
-$color-text-hero: #707070;
-$color-bg-list: #F6F6F6;
-$color-num-list: #FFF;
-$color-bg-num: #9356dc;
-$color-icon-list: #707070;
-$color-icon-list-hover: #9356dc;
-$color-bg-list-hover: #f4ecfe;
 $color-bg-rest: #F6F6F6;
-
-.local {
-    background-color: $color-bg-local;
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-    font-size: 1rem;
-    font-weight: 500; 
-    span {
-        margin-right: 1rem;
-    }
-}
-
-.hero {
-    background-color: $color-bg-hero;
-    padding: 2rem 2rem 3.5rem 2rem;
-    text-align: center;
-    &--text {
-        font-weight: 300;
-        margin: 1rem 0 2rem 0;
-        color: $color-text-hero;
-    }
-}
-
-.fonct {
-    padding: 3rem 1rem 2.5rem 1rem;
-    &--list {
-        margin-top: 2rem;
-        padding: 0;
-        counter-reset: compteListe;
-    }
-    .f-l--block{
-        cursor: pointer;
-        padding: 1.8rem;
-        margin: 0 .3rem 1.5rem .75rem;
-        box-shadow: 0.25rem 0.25rem 0.5rem rgba(0,0,0,.125);
-        border-radius: 1.25rem;
-        background-color: $color-bg-list;
-        display: flex;
-        position: relative;
-        align-items: center;
-        transition-duration: .25s;
-        &:hover {
-            background-color: $color-bg-list-hover;
-            span:first-child {
-                color:$color-icon-list-hover;
-            }
-        }
-        &:before {
-            counter-increment: compteListe 1;
-            content: counter(compteListe) " ";
-            background: $color-bg-num;
-            height: 1.5rem;
-            width: 1.5rem;
-            border-radius: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: $color-num-list;
-            position: absolute;
-            left: -.75rem;
-        }
-        span {
-            font-weight: 500;
-            &:first-child {
-                margin:0 1.5rem 0 1rem;
-                color: $color-icon-list;
-                font-weight: 900;
-            }
-        }
-    }
-}
+$color-bg-card: #FFF;
+$color-bg-badge: #99e2d0;
+$color-badge: #1E9A7B;
 
 .rest {
     background-color: $color-bg-rest;
@@ -95,7 +17,7 @@ $color-bg-rest: #F6F6F6;
             column-gap: 1rem;
           }
         .card {
-            background-color: #fff;
+            background-color: $color-bg-card;
             border-radius: 1rem;
             box-shadow: 0px 0px 10px 0px rgba(0,0,0,.2);
             -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,.2);
@@ -124,8 +46,8 @@ $color-bg-rest: #F6F6F6;
                 transition-duration: .25s;
             }
             &--badge {
-                background-color: #99e2d0;
-                color: #1E9A7B;
+                background-color: $color-bg-badge;
+                color: $color-badge;
                 font-size: 15px;
                 font-weight: 500;
                 box-shadow: 0px 0px 5px 0px rgba(0,0,0,.25);
@@ -158,4 +80,3 @@ $color-bg-rest: #F6F6F6;
         }
     }
 }
-

@@ -4,28 +4,6 @@ $color-bg-menu-cta: #FFF;
 $color-bg-conf: #99e2d0;
 $color-conf: #FFF;
 
-.header {
-    &--return {
-        position: absolute;
-        left: 2rem;
-        top: 40%;
-        font-size: 1.2rem;
-    }
-   &--link {
-       text-decoration: none;
-       color: #000;
-   } 
-}
-
-.main--hero {
-    img {
-        max-width: 100%;
-        max-height: 32rem;
-        width: 100%;
-        object-fit: cover;
-    }
-}
-
 .menu {
     margin-top: -4rem;
     border-radius: 2rem 2rem 0 0;
@@ -34,10 +12,13 @@ $color-conf: #FFF;
     position: relative;
     padding: 0 1rem;
     &--box {
-        display: grid;
         @media (min-width:64rem) {
-            grid-template-columns: repeat(3,1fr);
-            column-gap: 1rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            .box {
+                width: calc(100% / 2.5);
+            }
           }
     }
     &--title {
@@ -51,7 +32,6 @@ $color-conf: #FFF;
         }
     }
     .box {
-        margin-left: -40px;
         &--subtitle {
             margin-bottom: 1.3rem;
             text-transform: uppercase;
@@ -77,7 +57,7 @@ $color-conf: #FFF;
         overflow: hidden;
         cursor: pointer;
         opacity: 1;
-        transform: translateY(-50px);
+        transform: translateY(50px);
         animation-fill-mode: both;
         max-width: 100%;
         .box--section {
@@ -105,7 +85,6 @@ $color-conf: #FFF;
             display: flex;
             justify-content: flex-end;
             align-items: flex-end;
-            padding-left: 0.5rem;
             font-size: .9rem;
             font-weight: 500;
             margin-top: 25px;
@@ -138,38 +117,3 @@ $color-conf: #FFF;
       }
     
 }
-
-
-.menu--btn {
-    display: flex;
-    justify-content: center;
-    padding: 2rem 0 4rem 0;
-    .menu--cta {
-        padding: 15px 50px;
-    }
-}
-
-@keyframes spin { 
-    from { 
-        transform: rotate(0deg); 
-    } to { 
-        transform: rotate(-360deg); 
-    }
-}
-
-@keyframes itemdown {
-    0% {
-      transform: translateY(-50px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-@for $i from 0 to 10 {
-    .delay-#{$i} {
-      animation: itemdown .5s ease-in-out #{$i/20}s;
-    }
-  }
